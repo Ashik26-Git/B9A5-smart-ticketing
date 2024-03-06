@@ -25,6 +25,17 @@ for(const seat of allSeat){
          const fare =document.createElement('p');
          fare.innerText = '550';
          price.appendChild(fare);
+         
+                //next button enable
+          const input = document.getElementById("input-number");
+          let val = parseInt(input.value); 
+         if(selectedSeat > 0  ){
+          if(!isNaN(val)){
+            document.getElementById("next-button").removeAttribute('disabled');
+          }
+        
+        }
+
         setInnerText("available-seat",count);
         setInnerText("selected-seat",selectedSeat);
         setInnerText("total-price",totalPrice);
@@ -35,6 +46,8 @@ for(const seat of allSeat){
     });
 }
 
+  
+ 
 function setInnerText(id, value){
     document.getElementById(id).innerText = value;
 }
